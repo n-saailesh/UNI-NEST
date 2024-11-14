@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNI-NEST</title>
+</head>
+<body>
+
+    <link rel="stylesheet" href = "style.css">
+
+    <style>
+        body {background-color:rgb(12, 12, 57);}
+        h1 {color: white;
+            font-family: Cursive,Brush Script MT;
+            font-size: 300%
+        }
+
+        p {color: white;
+            font-family: Cursive,Brush Script MT;
+            font-size: 100%}
+    </style>
+
+    <center>
+
+    <img src = "logo_processed.png" alt="">
+
+    <div class = "form-element">
+    <form id = "preferences form">
+    <h1>We want to get to know you!</h1>
+
+    <!-- Asking what city user would like to find a resident in -->
+        
+        <label id = "city" for="city">
+            <p>Where do you want to live?</p>
+            <input id = "city" type="text" required/>
+        </label>
+
+    <!-- Asking user for their price range (minimum and maximum)-->
+            <label id = "price-range" for="price-range">
+                <p>What is the monthly price range ($) you are looking for?</p><br>
+                <input style = "color: white;" id = "price-range" placeholder = "minimum" min = "1" type="text" required/>
+                <input style = "color: white;" id = "price-range" placeholder = "maximum" min = "10000000000" type="text" required/>
+            </label>
+
+    <!-- Asking user for what type of structural estate (minimum and meximum)-->
+            <label id = "structure" for="structure">
+                <p>What type of estate are you looking for?</p><br>
+            <label>
+                <input id = "structure" type="checkbox" name = "House"required/>
+                <p>House</p>
+            </label>
+
+            <label>
+                <input id = "structure" type="checkbox" name = "Apartment"required/>
+                Apartment
+            </label>
+    </form>
+</div>
+
+<a href= "chatBot.html">
+    <button class ="button1">Begin the search</button>
+</a>
+
+</center>
+
+
+
+</style>
+
+
+</body>
+</html>
