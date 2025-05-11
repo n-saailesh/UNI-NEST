@@ -29,7 +29,7 @@ Frontend: HTML, CSS
 
 Backend: JavaScript
 
-Design Tooks, a high-fidelity prototype using Figma.
+Design Tooss: a high-fidelity prototype using Figma, FLask used to brigde front-end and back-end
 
 **👣UX Journey and Design Process**
 - Followed the user's thinking process to ensure eco-centric development
