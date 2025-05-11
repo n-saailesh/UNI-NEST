@@ -27,7 +27,7 @@ found the feature to make the journey process less tendency and more. This helps
 **🧰 Web Developing Languages**
 Frontend: HTML, CSS
 
-Backend: JavaScript
+Backend: Python
 
 Design Tooss: a high-fidelity prototype using Figma, FLask used to brigde front-end and back-end
 
