@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(12, 12, 57);
+}
+
+h2,
+h3 {
+    color: white;
+    font-family: Cursive, Brush Script MT;
+    font-size: 300%;
+}
+
+h3 {
+    color: white;
+    font-family: Cursive, Brush Script MT;
+    font-size: 100%;
+}
