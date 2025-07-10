@@ -1,0 +1,76 @@
+[
+  {
+    "id": "1916-Lake-Atriums-Cir,-Apt-33,-Orlando,-FL-32839",
+    "formattedAddress": "1916 Lake Atriums Cir, Apt 33, Orlando, FL 32839",
+    "addressLine1": "1916 Lake Atriums Cir",
+    "addressLine2": "Apt 33",
+    "city": "Orlando",
+    "state": "FL",
+    "zipCode": "32839",
+    "county": "Orange",
+    "latitude": 28.490198,
+    "longitude": -81.405637,
+    "propertyType": "Townhouse",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "squareFootage": 660,
+    "status": "Active",
+    "price": 1250,
+    "listingType": "Standard",
+    "listedDate": "2025-07-10T00:00:00.000Z",
+    "removedDate": null,
+    "createdDate": "2020-05-28T13:24:24.244Z",
+    "lastSeenDate": "2025-07-10T04:49:08.111Z",
+    "daysOnMarket": 1,
+    "history": {
+      "2024-12-04": {
+        "event": "Rental Listing",
+        "price": 1250,
+        "listingType": "Standard",
+        "listedDate": "2024-12-04T00:00:00.000Z",
+        "removedDate": "2024-12-05T00:00:00.000Z",
+        "daysOnMarket": 1
+      },
+      "2024-12-31": {
+        "event": "Rental Listing",
+        "price": 1250,
+        "listingType": "Standard",
+        "listedDate": "2024-12-31T00:00:00.000Z",
+        "removedDate": "2025-01-01T00:00:00.000Z",
+        "daysOnMarket": 1
+      },
+      "2025-01-22": {
+        "event": "Rental Listing",
+        "price": 1250,
+        "listingType": "Standard",
+        "listedDate": "2025-01-22T00:00:00.000Z",
+        "removedDate": "2025-01-23T00:00:00.000Z",
+        "daysOnMarket": 1
+      },
+      "2025-03-03": {
+        "event": "Rental Listing",
+        "price": 1250,
+        "listingType": "Standard",
+        "listedDate": "2025-03-03T00:00:00.000Z",
+        "removedDate": "2025-03-04T00:00:00.000Z",
+        "daysOnMarket": 1
+      },
+      "2025-06-26": {
+        "event": "Rental Listing",
+        "price": 1250,
+        "listingType": "Standard",
+        "listedDate": "2025-06-26T00:00:00.000Z",
+        "removedDate": "2025-06-27T00:00:00.000Z",
+        "daysOnMarket": 1
+      },
+      "2025-07-10": {
+        "event": "Rental Listing",
+        "price": 1250,
+        "listingType": "Standard",
+        "listedDate": "2025-07-10T00:00:00.000Z",
+        "removedDate": null,
+        "daysOnMarket": 1
+      }
+    }
+  }
+]
