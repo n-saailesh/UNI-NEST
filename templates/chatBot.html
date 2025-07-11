@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create Account</title>
+    <!-- <link rel="stylesheet" href="index.css"> -->
+</head>
+
+
+<body>
+
+    <style>
+        body {
+            background-color: rgb(12, 12, 57);
+            font-family: Cursive, Brush Script MT;
+        }
+
+        h2,
+        h3 {
+            color: white;
+            font-size: 300%
+        }
+
+        label {
+            background-color: rgb(255, 255, 255, 0.1);
+            color: white;
+            font-size: 100%
+        }
+
+        form {
+            background-color: rgb(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+
+    <h1> Properties in {{city}} </h1>
+
+    {%for p in good_result%}
+
+    <h2>{{p.propertyType}}</h2>
+    <p>Price: ${{p.price}}</p>
+    <p>Address: {{p.address}}</p>
+
+
+    {% else %}
+    <p>None found.</p>
+
+    {% endfor %}
+
+</body>
+
+
+
+
+
+</html>

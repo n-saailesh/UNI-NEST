@@ -16,16 +16,20 @@ def submit():
 
     if request.method == "POST":
         city_retrived = request.form.get('city')
+        state_retrived = request.form.get('state')
         minimum_retrived = request.form.get('minimum')
         maximum_retrived = request.form.get('maximum')
         strcutures = request.form.getlist('structure[]')
+        bathrooms_retrived = request.form.get('bathroom')
+        bedrooms_retrived = request.form.get('bedroom')
 
-        print(city_retrived,maximum_retrived,strcutures)
 
-        string = str(city_retrived) + str(maximum_retrived) + str(minimum_retrived) + str(strcutures)
-        
+        print("html to python: preferences.html to script.py"+ city_retrived,state_retrived,minimum_retrived,maximum_retrived,strcutures, bathrooms_retrived, bedrooms_retrived)
+
+        string = str(city_retrived) + str(state_retrived) + str(maximum_retrived) + str(minimum_retrived) + str(strcutures) + str(bathrooms_retrived) + str(bedrooms_retrived)
+    
         import chatBot
-        result = chatBot.retrival_from_html(city_retrived,minimum_retrived,maximum_retrived,strcutures)
+        result = chatBot.retrival_from_html(city_retrived,state_retrived,minimum_retrived,maximum_retrived,strcutures,bathrooms_retrived,bedrooms_retrived)
 
         return render_template('preferences.html', string=string)
 
