@@ -62,7 +62,7 @@ params = {
               }
 
 
-# # response = requests.get("https://api.rentcast.io/v1/listings/rental/long-term",headers=headers, params = params)
+response = requests.get("https://api.rentcast.io/v1/listings/rental/long-term",headers=headers, params = params)
 
 
 
@@ -79,11 +79,11 @@ f = open("florida_realEstateEXAMPLE.txt")
 
 text = f.read()
 
-details = json.loads(text)
+details = json.loads(response)
 
-structure = ["Apartment"]
-minimum = 1000
-maximum = 1500
+# structure = ["Apartment"]
+# minimum = 1000
+# maximum = 1500
 
 # city = city.lower()
 # state = state.lower()   
@@ -131,12 +131,15 @@ for num in range(len(details)):
 
 @app.route('/')
 def chatBot():
-    good_result = strong_match
+    strong_result = strong_match
+    good_result = good_match
+    weak_result = weak_match
+    bad_result = bad_match
 
     if len(strong_match) != 0:
         print("file ready to send to chatBot.html")
 
-    return render_template("chatBot.html", good_result=good_result, city=city)
+    return render_template("chatBot.html", strong_result=strong_result,good_result = good_result,weak_result = weak_result, bad_result = bad_result , city=city)
 
 
 # @app.route('/test')

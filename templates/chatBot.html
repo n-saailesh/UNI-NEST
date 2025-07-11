@@ -3,52 +3,454 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Create Account</title>
     <!-- <link rel="stylesheet" href="index.css"> -->
-</head>
-
-
-<body>
 
     <style>
         body {
             background-color: rgb(12, 12, 57);
             font-family: Cursive, Brush Script MT;
+            color: white;
+            margin: 20px;
         }
 
+        h1,
         h2,
         h3 {
             color: white;
-            font-size: 300%
+            font-size: 300%;
         }
 
-        label {
-            background-color: rgb(255, 255, 255, 0.1);
+        h4 {
             color: white;
-            font-size: 100%
+            font-size: 150%;
         }
 
-        form {
+        p {
+            color: white;
+            font-size: 120%;
+        }
+
+        .property {
             background-color: rgb(255, 255, 255, 0.1);
             padding: 30px;
             border-radius: 10px;
             margin-bottom: 20px;
         }
+
+        .header {
+            margin-bottom: 20px;
+        }
+
+        .status-badge {
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .property-title {
+            margin: 10px 0;
+        }
+
+        .property-subtitle {
+            margin: 5px 0;
+            opacity: 0.8;
+        }
+
+        .property-details {
+            background-color: rgb(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        .detail-item {
+            margin: 8px 0;
+            font-size: 16px;
+        }
+
+        .detail-key {
+            font-weight: bold;
+            color: #87CEEB;
+        }
+
+        .detail-value {
+            margin-left: 10px;
+            color: white;
+        }
+
+        .no-results {
+            text-align: center;
+            font-size: 150%;
+            color: #ccc;
+            margin-top: 50px;
+        }
     </style>
+
+</head>
+
+
+<body>
+
+    <div class="property" id="container"></div>
+
 
     <h1> Properties in {{city}} </h1>
 
-    {%for p in good_result%}
+    <p>Premium Real Esate Listings</p>
 
-    <h2>{{p.propertyType}}</h2>
-    <p>Price: ${{p.price}}</p>
-    <p>Address: {{p.address}}</p>
 
+
+    {%for p in strong_result%}
+
+    <div class="property">
+
+        <div class="header">
+            <div class="status-bage"> {{p.status|default('Active')}}</div>
+            <h3 class="property-title">{{p.addressLine1}}</h3>
+            <h4 class="property-subtitle">{{p.city}},{{p.state}},{{p.zipCode}}</h4>
+        </div>
+
+        <div class="property-details">
+
+            <div class="detail-item">
+                <span class="detail-key">Property ID:</span>
+                <span class="detail-value">{{p.id|default('N/A')}}</span>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-key">Address:</span>
+                <span class="detail-value">{{p.formattedAddress|default('N/A')}}</span>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-key">Property Type:</span>
+                <span class="detail-value">{{p.propertyType|default('N/A')}}</span>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-key">Number of Bathrooms: </span>
+                <span class="detail-value">{{p.bathrooms|default('N/A')}}</span>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-key">Number of Bedrooms: </span>
+                <span class="detail-value">{{p.bedrooms|default('N/A')}}</span>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-key">Square Footage: </span>
+                <span class="detail-value">{{p.squareFootage}}</span>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-key">Price: </span>
+                <span class="detail-value">{{p.price}}</span>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-key">County: </span>
+                <span class="detail-value">{{p.county}}</span>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-key">Days on the Market: </span>
+                <span class="detail-value">{{p.daysonMarket}}</span>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-key">Listed Date: </span>
+                <span class="detail-value">{{p.listedDate}}</span>
+
+            </div>
+
+        </div>
+
+    </div>
 
     {% else %}
     <p>None found.</p>
+    <Dic class="noneFound">
+        <h2> No Properties Found </h2>
+        <p>Try a different city or search term.</p>
+        {% endfor %}
 
-    {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {%for p in good_result%}
+
+        <div class="property">
+
+            <div class="header">
+                <div class="status-bage"> {{p.status|default('Active')}}</div>
+                <h3 class="property-title">{{p.addressLine1}}</h3>
+                <h4 class="property-subtitle">{{p.city}},{{p.state}},{{p.zipCode}}</h4>
+            </div>
+
+            <div class="property-details">
+
+                <div class="detail-item">
+                    <span class="detail-key">Property ID:</span>
+                    <span class="detail-value">{{p.id|default('N/A')}}</span>
+                </div>
+
+                <div class="detail-item">
+                    <span class="detail-key">Address:</span>
+                    <span class="detail-value">{{p.formattedAddress|default('N/A')}}</span>
+                </div>
+
+                <div class="detail-item">
+                    <span class="detail-key">Property Type:</span>
+                    <span class="detail-value">{{p.propertyType|default('N/A')}}</span>
+                </div>
+
+                <div class="detail-item">
+                    <span class="detail-key">Number of Bathrooms: </span>
+                    <span class="detail-value">{{p.bathrooms|default('N/A')}}</span>
+                </div>
+
+                <div class="detail-item">
+                    <span class="detail-key">Number of Bedrooms: </span>
+                    <span class="detail-value">{{p.bedrooms|default('N/A')}}</span>
+                </div>
+
+                <div class="detail-item">
+                    <span class="detail-key">Square Footage: </span>
+                    <span class="detail-value">{{p.squareFootage}}</span>
+                </div>
+
+                <div class="detail-item">
+                    <span class="detail-key">Price: </span>
+                    <span class="detail-value">{{p.price}}</span>
+                </div>
+
+                <div class="detail-item">
+                    <span class="detail-key">County: </span>
+                    <span class="detail-value">{{p.county}}</span>
+                </div>
+
+                <div class="detail-item">
+                    <span class="detail-key">Days on the Market: </span>
+                    <span class="detail-value">{{p.daysonMarket}}</span>
+                </div>
+
+                <div class="detail-item">
+                    <span class="detail-key">Listed Date: </span>
+                    <span class="detail-value">{{p.listedDate}}</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% else %}
+        <p>None found.</p>
+        <Dic class="noneFound">
+            <h2> No Properties Found </h2>
+            <p>Try a different city or search term.</p>
+            {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            {%for p in weak_result%}
+
+            <div class="property">
+
+                <div class="header">
+                    <div class="status-bage"> {{p.status|default('Active')}}</div>
+                    <h3 class="property-title">{{p.addressLine1}}</h3>
+                    <h4 class="property-subtitle">{{p.city}},{{p.state}},{{p.zipCode}}</h4>
+                </div>
+
+                <div class="property-details">
+
+                    <div class="detail-item">
+                        <span class="detail-key">Property ID:</span>
+                        <span class="detail-value">{{p.id|default('N/A')}}</span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-key">Address:</span>
+                        <span class="detail-value">{{p.formattedAddress|default('N/A')}}</span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-key">Property Type:</span>
+                        <span class="detail-value">{{p.propertyType|default('N/A')}}</span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-key">Number of Bathrooms: </span>
+                        <span class="detail-value">{{p.bathrooms|default('N/A')}}</span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-key">Number of Bedrooms: </span>
+                        <span class="detail-value">{{p.bedrooms|default('N/A')}}</span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-key">Square Footage: </span>
+                        <span class="detail-value">{{p.squareFootage}}</span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-key">Price: </span>
+                        <span class="detail-value">{{p.price}}</span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-key">County: </span>
+                        <span class="detail-value">{{p.county}}</span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-key">Days on the Market: </span>
+                        <span class="detail-value">{{p.daysonMarket}}</span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-key">Listed Date: </span>
+                        <span class="detail-value">{{p.listedDate}}</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% else %}
+            <p>None found.</p>
+            <Dic class="noneFound">
+                <h2> No Properties Found </h2>
+                <p>Try a different city or search term.</p>
+                {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {%for p in bad_result%}
+
+                <div class="property">
+
+                    <div class="header">
+                        <div class="status-bage"> {{p.status|default('Active')}}</div>
+                        <h3 class="property-title">{{p.addressLine1}}</h3>
+                        <h4 class="property-subtitle">{{p.city}},{{p.state}},{{p.zipCode}}</h4>
+                    </div>
+
+                    <div class="property-details">
+
+                        <div class="detail-item">
+                            <span class="detail-key">Property ID:</span>
+                            <span class="detail-value">{{p.id|default('N/A')}}</span>
+                        </div>
+
+                        <div class="detail-item">
+                            <span class="detail-key">Address:</span>
+                            <span class="detail-value">{{p.formattedAddress|default('N/A')}}</span>
+                        </div>
+
+                        <div class="detail-item">
+                            <span class="detail-key">Property Type:</span>
+                            <span class="detail-value">{{p.propertyType|default('N/A')}}</span>
+                        </div>
+
+                        <div class="detail-item">
+                            <span class="detail-key">Number of Bathrooms: </span>
+                            <span class="detail-value">{{p.bathrooms|default('N/A')}}</span>
+                        </div>
+
+                        <div class="detail-item">
+                            <span class="detail-key">Number of Bedrooms: </span>
+                            <span class="detail-value">{{p.bedrooms|default('N/A')}}</span>
+                        </div>
+
+                        <div class="detail-item">
+                            <span class="detail-key">Square Footage: </span>
+                            <span class="detail-value">{{p.squareFootage}}</span>
+                        </div>
+
+                        <div class="detail-item">
+                            <span class="detail-key">Price: </span>
+                            <span class="detail-value">{{p.price}}</span>
+                        </div>
+
+                        <div class="detail-item">
+                            <span class="detail-key">County: </span>
+                            <span class="detail-value">{{p.county}}</span>
+                        </div>
+
+                        <div class="detail-item">
+                            <span class="detail-key">Days on the Market: </span>
+                            <span class="detail-value">{{p.daysonMarket}}</span>
+                        </div>
+
+                        <div class="detail-item">
+                            <span class="detail-key">Listed Date: </span>
+                            <span class="detail-value">{{p.listedDate}}</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                {% else %}
+                <p>None found.</p>
+                <Dic class="noneFound">
+                    <h2> No Properties Found </h2>
+                    <p>Try a different city or search term.</p>
+                    {% endfor %}
 
 </body>
 
